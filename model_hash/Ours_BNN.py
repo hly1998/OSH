@@ -220,9 +220,9 @@ def train_val(config):
                 w = class_net(tmp_input, 'l')
                 y, hash_centers = label_net(label.float(), w)
                 l1 = HP_criterion(Xt, hash_centers, label)
-                l2 = HD_criterion(Xs, Xt.detach()) * config["lambda1"]
+                l2 = HD_criterion(Xs, Xt.detach()) * config["lambda2"]
                 probs = class_net(Is)
-                l3 = cross_entropy_loss(probs, label) * config["lambda2"]
+                l3 = cross_entropy_loss(probs, label) * config["lambda1"]
                 loss = l1 + l2 + l3
                 train_loss_l1 += l1.item()
                 train_loss_l2 += l2.item()
