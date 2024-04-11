@@ -16,7 +16,3 @@ You can easily run our code by following these steps:
 + In OSH directory, run the command "sh scripts/main.sh" to begin the training process.
 
 You will obtain the results of our model with different BNN backbones on the CIFAR100 dataset. Please note that the CIFAR100 dataset will be automatically downloaded when you run the code.
-
-# How to get the IMAGENET100 and NUSWIDE dataset
-
-If you wish to obtain the IMAGENET100 and NUSWIDE datasets, you can refer to the link provided in the repository https://github.com/swuxyj/DeepHash-pytorch. We would like to express our gratitude to the author of this repository, as our code structure and baselines refer to it.
