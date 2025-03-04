@@ -1,4 +1,4 @@
-# OSH
+# ODH
 This is the Python implementation of the paper One-bit Deep Hashing: Towards a Resource-Efficient Hashing Model with Binary Neural Networks (ACMMM24) (https://dl.acm.org/doi/abs/10.1145/3664647.3681496).
 
 ### Overview
@@ -32,7 +32,7 @@ sh scripts/run.sh
 This will initiate the training process. Specify the **BNN model** by modifying the parameter `--bnn_model`, and select the **dataset** by adjusting the parameter `--dataset`.
 
 ### Citation
-If you find our code useful and use OSH in your work, please cite our paper.
+If you find our code useful and use ODH in your work, please cite our paper.
 ```bash
 @inproceedings{he2024one,
   title={One-bit deep hashing: Towards resource-efficient hashing model with binary neural network},
