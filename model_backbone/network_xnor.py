@@ -1,6 +1,7 @@
 import torch.nn as nn
-from layers_xnor import XNORLinear,XNORConv2d
-from network import resnet50
+from model_backbone.layers_xnor import XNORLinear,XNORConv2d
+# from network import resnet50
+from torchvision import models
 
 class BasicBlock(nn.Module):
     expansion = 1
@@ -59,7 +60,7 @@ class ResNet_XNOR(nn.Module):
     # 带有初始化的实现
     def __init__(self, hash_bit=64, block=BottleNeck, num_layer = [3, 4, 6, 3], input_channels=3):
         super(ResNet_XNOR, self).__init__()
-        self.pretrianed_real_net = resnet50(pretrained=True)
+        self.pretrianed_real_net = models.resnet50(pretrained=True)
         self.in_channels = 64
         self.conv1 = self.pretrianed_real_net.conv1
         self.bn1 = self.pretrianed_real_net.bn1
@@ -129,7 +130,7 @@ class ResNet_XNOR(nn.Module):
 class ResNet_XNOR_More_Real(nn.Module):
     def __init__(self, hash_bit=64, block=BottleNeck, num_layer = [3, 4, 6, 3], input_channels=3):
         super(ResNet_XNOR_More_Real, self).__init__()
-        self.pretrianed_real_net = resnet50(pretrained=True)
+        self.pretrianed_real_net = models.resnet50(pretrained=True)
         self.in_channels = 64
         self.conv1 = self.pretrianed_real_net.conv1
         self.bn1 = self.pretrianed_real_net.bn1

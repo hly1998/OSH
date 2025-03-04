@@ -1,5 +1,4 @@
 from utils.tools import *
-from network_xnor_resnet import ResNet_XNOR_v9
 from network import ResNet_W
 import torch
 import torch.optim as optim

@@ -1,12 +1,12 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = input("Please input CUDA_VISIBLE_DEVICES: ")
 from utils.tools import *
 from network import ResNet_W
 import torch
 import torch.optim as optim
-import time
 import numpy as np
 import random
 import logging
-import psutil
 import logging
 import kornia.augmentation as Kg
 import torch.nn.functional as F
@@ -33,6 +33,7 @@ def get_config():
         "bit_list": [64], 
         "stop_iter": 7,
         "n_positive": 2,
+        "net": ["ResNet_W"],
     }
     config = config_dataset(config)
     return config
@@ -93,7 +94,7 @@ def train_val(config, bit, backbone):
     config["num_train"] = num_train
     class_net = ResNet_W(config['n_class']).to(device)
 
-    optimizer = config["optimizer"]["type"]([class_net.parameters()], **(config["optimizer"]["optim_params"]))
+    optimizer = config["optimizer"]["type"](class_net.parameters(), **(config["optimizer"]["optim_params"]))
     scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, max_lr=0.001, steps_per_epoch=len(train_loader), epochs=config["epoch"])
     Best_mAP = 0
     count = 0

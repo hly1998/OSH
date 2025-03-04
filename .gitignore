@@ -1,0 +1,6 @@
+/.venv
+/.bigvenv
+/data
+/checkpoints
+__pycache__/
+.DS_Store

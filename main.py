@@ -8,9 +8,7 @@ from model_backbone.network_rbonn import ResNet_Rbonn
 from model_backbone.network_rebnn import ResNet_Rebnn
 
 import torch
-import random
 import logging
-import psutil
 import argparse
 from model_hash.Ours_BNN import train_val
 
@@ -69,7 +67,6 @@ def get_config(args):
         "lambda2": 0.001,
         "temp": args.temp,
         "transformation_scale": 0.5,
-        "info": "Ours_v5",
         "resize_size": 256,
         "crop_size": 224,
         "batch_size": 32,

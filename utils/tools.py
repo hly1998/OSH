@@ -35,13 +35,13 @@ def config_dataset(config):
 
     config["data_path"] = "/dataset/" + config["dataset"] + "/"
     if config["dataset"] == "imagenet":
-        config["data_path"] = "{your root}/OSH/imagenet/"
+        config["data_path"] = "/data/lyhe/image_data/imagenet/"
     if config["dataset"] == "nuswide_21":
-        config["data_path"] = "{your root}/OSH/nuswide_21/"
+        config["data_path"] = "/data/lyhe/image_data/nuswide_21/"
     config["data"] = {
-        "train_set": {"list_path": "{your root}/OSH/" + config["dataset"] + "/train.txt", "batch_size": config["batch_size"]},
-        "database": {"list_path": "{your root}/OSH/" + config["dataset"] + "/database.txt", "batch_size": config["batch_size"]},
-        "test": {"list_path": "{your root}/OSH/" + config["dataset"] + "/test.txt", "batch_size": config["batch_size"]}}
+        "train_set": {"list_path": "/data/lyhe/image_data/" + config["dataset"] + "/train.txt", "batch_size": config["batch_size"]},
+        "database": {"list_path": "/data/lyhe/image_data/" + config["dataset"] + "/database.txt", "batch_size": config["batch_size"]},
+        "test": {"list_path": "/data/lyhe/image_data/" + config["dataset"] + "/test.txt", "batch_size": config["batch_size"]}}
     return config
 
 class ImageList(object):
@@ -176,7 +176,7 @@ def cifar100_dataset(config):
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
 
-    cifar_dataset_root = '{your root}/OSH/data/cifar100/'
+    cifar_dataset_root = '/data/lyhe/image_data/cifar100/'
     if config["info"] in ["ours"]:
         explore_train_dataset = MyCIFAR100(root=cifar_dataset_root,
                                 train=True,

@@ -3,7 +3,7 @@ from torch.autograd import Function
 from torch.nn import Parameter, Module, Conv2d, Linear, BatchNorm1d, BatchNorm2d, Dropout, ReLU
 
 
-__all__ = ['XNORConv2d', 'XNORLinear', 'BNConvReLU','BNLinearReLU']
+# __all__ = ['XNORConv2d', 'XNORLinear', 'BNConvReLU','BNLinearReLU']
 
 
 class BinActive(Function):
